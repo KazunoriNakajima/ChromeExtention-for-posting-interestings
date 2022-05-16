@@ -48,3 +48,7 @@ window.addEventListener("load", async () => {
     textForm.value = "";
   });
 });
+
+function onRun() {
+  document.body.style.backgroundColor = "#fcc";
+}
