@@ -2,20 +2,43 @@
 <html>
   <head>
     <meta charset="utf-8" />
+    <script src="postingview.js"></script>
     <script src="popup.js"></script>
   </head>
   <body>
-    <button id="btn">Run</button>
-    <h3>interestへ投稿</h3>
+    <h3>#interestsへ投稿</h3>
     <div class="URL"></div>
     <br />
-    <button id="btn-mitene">みんな見てね！</button><br />
-    <button id="btn-mitsuketayo">面白い記事見つけたよ！</button><br />
-    <button id="btn-interest">明日のinterestの時間に話し合いたい！</button>
+    <label
+      ><input
+        type="radio"
+        id="message1"
+        name="fixedMessage"
+      />みんな見てね！</label
+    ><br />
+    <label
+      ><input
+        type="radio"
+        id="message2"
+        name="fixedMessage"
+      />面白い記事見つけたよ！</label
+    ><br />
+    <label
+      ><input
+        type="radio"
+        id="message3"
+        name="fixedMessage"
+      />明日のinterestの時間に紹介したい</label
+    ><br />
     <div class="form">
-      <textarea placeholder="Message: "></textarea>
+      <textarea
+        id="text"
+        cols="30"
+        rows="10"
+        placeholder="コメントを入力"
+      ></textarea>
     </div>
     <button id="btn-post">投稿</button>
-    <script src="popup.js"></script>
+    <!-- <script src="popup.js"></script> -->
   </body>
 </html>
