@@ -1,0 +1,25 @@
+{
+  "name": "chromeextention-for-posting-interestings",
+  "version": "1.0.0",
+  "description": "",
+  "main": "popup.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KazunoriNakajima/ChromeExtention-for-posting-interestings.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KazunoriNakajima/ChromeExtention-for-posting-interestings/issues"
+  },
+  "homepage": "https://github.com/KazunoriNakajima/ChromeExtention-for-posting-interestings#readme",
+  "dependencies": {
+    "chai": "^4.3.6",
+    "eslint": "^8.15.0",
+    "mocha": "^10.0.0",
+    "prettier": "^2.6.2"
+  }
+}
