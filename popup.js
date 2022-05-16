@@ -1,4 +1,6 @@
 "use strict";
+
+// fix
 window.addEventListener("load", async () => {
   let queryOptions = { active: true, currentWindow: true };
   let [tab] = await chrome.tabs.query(queryOptions);
@@ -14,7 +16,8 @@ window.addEventListener("load", async () => {
         "明日のinterestsで紹介したい",
       ];
       const webhookURL =
-        "https://hooks.slack.com/services/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";
+        // "https://hooks.slack.com/services/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";
+        "https://hooks.slack.com/services/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";
       for (let i = 1; i <= 3; i++) {
         const id = `message${i}`;
         const el = document.getElementById(id);
@@ -45,3 +48,7 @@ window.addEventListener("load", async () => {
     textForm.value = "";
   });
 });
+
+function onRun() {
+  document.body.style.backgroundColor = "#fcc";
+}
