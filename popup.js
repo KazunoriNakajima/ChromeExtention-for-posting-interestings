@@ -1,4 +1,6 @@
 "use strict";
+
+// fix
 window.addEventListener("load", async () => {
   let url = "";
   let queryOptions = { active: true, currentWindow: true };
