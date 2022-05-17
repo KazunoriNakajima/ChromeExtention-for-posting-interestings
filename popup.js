@@ -16,8 +16,9 @@ window.addEventListener("load", async () => {
         "明日のinterestsで紹介したい",
       ];
       const webhookURL =
-        // "https://hooks.slack.com/services/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";
-        "https://hooks.slack.com/services/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";
+        "https://hooks.slack.com/services/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";
+      // "https://hooks.slack.com/services/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";
+      // "https://hooks.slack.com/services/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";
       for (let i = 1; i <= 3; i++) {
         const id = `message${i}`;
         const el = document.getElementById(id);
@@ -33,6 +34,9 @@ window.addEventListener("load", async () => {
       }
       const data = {
         text: `<${tab.url}>\n${message}`,
+
+        username: "masashi",
+        icon_url: "image/T02DS9VKWLU-U02RZU1281G-227adde3fd71-512.png",
       };
       fetch(webhookURL, {
         method: "POST",

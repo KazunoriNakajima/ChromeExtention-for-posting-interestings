@@ -6,6 +6,6 @@
   "permissions": ["activeTab", "scripting", "tabs"],
   "action": {
     "default_popup": "popup.html",
-    "default_icon": "icon1.png"
+    "default_icon": "image/icon.png"
   }
 }
