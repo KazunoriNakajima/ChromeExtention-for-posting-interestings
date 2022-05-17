@@ -1,0 +1,23 @@
+.body{
+
+}
+
+#postform{
+    width: fit-content;
+}
+#btn-post{
+    float: right;
+
+}
+#btn-impersonation{
+    vertical-align: top;
+    height: 50px;
+    width: 20px;
+    margin-left: 40px;
+    background-color: #fefef4;
+    border-color: transparent;
+    color: transparent;
+}
+#impoersonation-box{
+    display: flex;
+}
