@@ -2,16 +2,16 @@
 
 // fix
 window.addEventListener("load", async () => {
-  let queryOptions = { active: true, currentWindow: true };
-  let [tab] = await chrome.tabs.query(queryOptions);
-
-  let yourWebhookURL = localStorage.getItem("yourWebhookURL");
+  
+  let yourWebhookURL;
+  // yourWebhookURL = localStorage.getItem("yourWebhookURL");
   if (!yourWebhookURL) {
-    // Prompt for one if a username isn't found
+    // Prompt for one if a WebhookUR isn't found
     yourWebhookURL = window.prompt("slackのyourWebhookURLは？");
     localStorage.setItem("yourWebhookURL", yourWebhookURL);
   }
-
+  let queryOptions = { active: true, currentWindow: true };
+  let [tab] = await chrome.tabs.query(queryOptions);
 
   const URLEl = document.getElementsByClassName("URL");
   URLEl[0].innerText = "URL: " + tab.url;
@@ -25,10 +25,8 @@ window.addEventListener("load", async () => {
       ];
       const webhookURL =
       yourWebhookURL;
-      // "https://hooks.slack.com/services/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";
-        // "https://hooks.slack.com/services/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";
-      // "https://hooks.slack.com/services/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";
-      // "https://hooks.slack.com/services/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";
+      // "https://hooks.slack.com/services/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";
+      console.log(webhookURL);
       for (let i = 1; i <= 3; i++) {
         const id = `message${i}`;
         const el = document.getElementById(id);
@@ -42,6 +40,9 @@ window.addEventListener("load", async () => {
       } else {
         message = textForm.value;
       }
+
+      // if (document.getElementById)const impersonationUsername = 
+
       const data = {
         text: `<${tab.url}>\n${message}`,
 
@@ -53,7 +54,7 @@ window.addEventListener("load", async () => {
         body: JSON.stringify(data),
       }).then((responce) => {
         if (!responce.ok) {
-          alert("エラーレスポンスが帰ってきました");
+          alert("エラーレスポンスが帰ってきました: "+ responce.status);
         }
       });
     }
