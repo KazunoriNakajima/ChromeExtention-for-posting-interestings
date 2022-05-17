@@ -3,8 +3,7 @@
 // fix
 window.addEventListener("load", async () => {
   
-  let yourWebhookURL;
-  // yourWebhookURL = localStorage.getItem("yourWebhookURL");
+  let yourWebhookURL = localStorage.getItem("yourWebhookURL");
   if (!yourWebhookURL) {
     // Prompt for one if a WebhookUR isn't found
     yourWebhookURL = window.prompt("slackのyourWebhookURLは？");
@@ -24,6 +23,7 @@ window.addEventListener("load", async () => {
         "明日のinterestsで紹介したい",
       ];
       const webhookURL =
+      // "https://hooks.slack.com/services/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";
       yourWebhookURL;
       // "https://hooks.slack.com/services/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";
       console.log(webhookURL);
@@ -45,10 +45,14 @@ window.addEventListener("load", async () => {
 
       const data = {
         text: `<${tab.url}>\n${message}`,
-
-        username: "masashi",
-        // icon_url: "image/T02DS9VKWLU-U02RZU1281G-227adde3fd71-512.png",
       };
+      if (document.getElementById("person2").checked){
+        data["username"]= "MasashiMaeda(ジブリ好き)";
+        data["icon_url"]="https://kazunorinakajima.github.io/digdig/T02DS9VKWLU-U02RZU1281G-227adde3fd71-512.png";
+      }else if(document.getElementById("person3").checked){
+        data["username"]= "ShimaBoo(魔神ブゥ好き)";
+        data["icon_url"]="https://kazunorinakajima.github.io/digdig/shimaboo.png";
+      }
       fetch(webhookURL, {
         method: "POST",
         body: JSON.stringify(data),

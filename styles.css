@@ -1,4 +1,12 @@
+@font-face {
+    font-family:"nicomoji";
+    src: url("nicomoji-plus_1.11.ttf") format("truetype");
+    font-family: "ranobe";
+    src: url("LightNovelPOPv2.otf") format("opentype");
+}
+
 body{
+    font-family: "ranobe";
     width: 250px;
 
 }
