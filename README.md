@@ -15,9 +15,8 @@
 
 1. Chrome 拡張機能の設定　 → [Chrome ウェブストア](https://chrome.google.com/webstore/category/extensions?hl=ja)からダウンロード
 
-![stages](image/ClomeWebStor.png)
-
 - ストアを検索　 → 　まだ公開されてません・・・でも一応登録しましたよ、うまく行けば近日公開（限定だけど）
+  ![stages](image/ClomeWebStor.png)
 
 2. Slack API の設定　 → Incoming Webhook のインストールと設定
 
