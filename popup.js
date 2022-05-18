@@ -23,6 +23,7 @@ window.addEventListener("load", async () => {
         "明日のinterestsで紹介したい",
       ];
       const webhookURL =
+        // "https://hooks.slack.com/services/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";
         // "https://hooks.slack.com/services/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";
         yourWebhookURL;
       // "https://hooks.slack.com/services/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";
