@@ -3,7 +3,7 @@
   "description": "My Extension",
   "version": "1.0",
   "manifest_version": 3,
-  "permissions": ["activeTab", "scripting", "tabs"],
+  "permissions": ["tabs"],
   "action": {
     "default_popup": "popup.html",
     "default_icon": "image/icon.png"
