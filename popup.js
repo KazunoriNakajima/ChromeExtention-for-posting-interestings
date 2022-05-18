@@ -2,6 +2,13 @@
 
 // fix
 window.addEventListener("load", async () => {
+  // localStorage.getItem("yourWebhookURL") = 0;  //for demo
+  let yourWebhookURL = localStorage.getItem("yourWebhookURL");
+  if (!yourWebhookURL) {
+    // Prompt for one if a WebhookUR isn't found
+    yourWebhookURL = window.prompt("slackのyourWebhookURLは？");
+    localStorage.setItem("yourWebhookURL", yourWebhookURL);
+  }
   let queryOptions = { active: true, currentWindow: true };
   let [tab] = await chrome.tabs.query(queryOptions);
 
@@ -16,9 +23,10 @@ window.addEventListener("load", async () => {
         "明日のinterestsで紹介したい",
       ];
       const webhookURL =
-        "https://hooks.slack.com/services/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";
-      // "https://hooks.slack.com/services/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";
-      // "https://hooks.slack.com/services/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";
+        // "https://hooks.slack.com/services/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";
+        yourWebhookURL;
+      // "https://hooks.slack.com/services/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";
+      console.log(webhookURL);
       for (let i = 1; i <= 3; i++) {
         const id = `message${i}`;
         const el = document.getElementById(id);
@@ -32,24 +40,27 @@ window.addEventListener("load", async () => {
       } else {
         message = textForm.value;
       }
+
+      // if (document.getElementById)const impersonationUsername =
+
       const data = {
         text: `<${tab.url}>\n${message}`,
-
-        // username: "Haruya-Yajima",
-        // username: "Masashi Maeda",
-        username: "ShimaBoo",
-        // icon_url: "https://slack.com/img/icons/app-57.png",
-        // icon_url: "https://kazunorinakajima.github.io/digdig/T02DS9VKWLU-U02RZU1281G-227adde3fd71-512.png",
-        icon_url: "https://kazunorinakajima.github.io/digdig/shimaboo.png",
-
-        //https://slack.com/img/icons/app-57.png",
       };
+      if (document.getElementById("person2").checked) {
+        data["username"] = "MasashiMaeda(ジブリ好き)";
+        data["icon_url"] =
+          "https://kazunorinakajima.github.io/digdig/T02DS9VKWLU-U02RZU1281G-227adde3fd71-512.png";
+      } else if (document.getElementById("person3").checked) {
+        data["username"] = "ShimaBoo(魔神ブゥ好き)";
+        data["icon_url"] =
+          "https://kazunorinakajima.github.io/digdig/shimaboo.png";
+      }
       fetch(webhookURL, {
         method: "POST",
         body: JSON.stringify(data),
       }).then((responce) => {
         if (!responce.ok) {
-          alert("エラーレスポンスが帰ってきました");
+          alert("エラーレスポンスが帰ってきました: " + responce.status);
         }
       });
     }
@@ -57,8 +68,19 @@ window.addEventListener("load", async () => {
     sendMessage();
     textForm.value = "";
   });
+  document.getElementById("btn-setting").addEventListener("click", () => {
+    yourWebhookURL = window.prompt("slackのyourWebhookURLを入力");
+    localStorage.setItem("yourWebhookURL", yourWebhookURL);
+  });
+  const impersonBox = document.getElementById("impersonation-box");
+  impersonBox.style.display = "none";
+  const impersonationButtonElement =
+    document.getElementById("btn-impersonation");
+  impersonationButtonElement.addEventListener("click", () => {
+    if (impersonBox.style.display === "block") {
+      impersonBox.style.display = "none";
+    } else {
+      impersonBox.style.display = "block";
+    }
+  });
 });
-
-function onRun() {
-  document.body.style.backgroundColor = "#fcc";
-}
