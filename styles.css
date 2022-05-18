@@ -1,0 +1,32 @@
+@font-face {
+    font-family:"nicomoji";
+    src: url("nicomoji-plus_1.11.ttf") format("truetype");
+    font-family: "ranobe";
+    src: url("LightNovelPOPv2.otf") format("opentype");
+}
+
+body{
+    font-family: "ranobe";
+    width: 250px;
+
+}
+
+#postform{
+    width: fit-content;
+}
+#btn-post{
+    float: right;
+
+}
+#btn-impersonation{
+    vertical-align: top;
+    height: 50px;
+    width: 20px;
+    margin-left: 40px;
+    background-color: #fefef4;
+    border-color: transparent;
+    color: transparent;
+}
+#impoersonation-box{
+    display: flex;
+}

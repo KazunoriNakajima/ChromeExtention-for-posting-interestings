@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
+    <link rel="stylesheet" href="styles.css">
     <script src="popup.js"></script>
   </head>
   <body>
@@ -29,6 +30,7 @@
         name="fixedMessage"
       />明日のinterestの時間に紹介したい</label
     ><br />
+    <div id="postform">
     <div class="form">
       <textarea
         id="text"
@@ -38,7 +40,38 @@
       ></textarea>
     </div>
     <button id="btn-setting"><img src="image/設定ボタン.png" /></button>
+    <button id="btn-impersonation">変身</button>
     <button id="btn-post"><img src="image/送信ボタン.png" /></button>
+  </div>
+  <div id="impersonation-box">
+    <h3>#成りすまし</h3>
+    <br />
+    <label
+      ><input
+        type="radio"
+        id="person1"
+        name="person"
+        value="yourSelf"
+        checked
+      />無し</label
+    ><br />
+    <label
+      ><input
+        type="radio"
+        id="person2"
+        name="person"
+        value="maashii"
+      />マーシー</label
+    ><br />
+    <label
+      ><input
+        type="radio"
+        id="person3"
+        name="person"
+        value="shimabu"
+      />しまぶー</label
+    ><br />
+  </div>
     <!-- <script src="popup.js"></script> -->
   </body>
 </html>
