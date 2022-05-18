@@ -23,8 +23,13 @@ window.addEventListener("load", async () => {
         "明日のinterestsで紹介したい",
       ];
       const webhookURL =
+<<<<<<< HEAD
       // "https://hooks.slack.com/services/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";
       yourWebhookURL;
+=======
+        // "https://hooks.slack.com/services/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";
+        yourWebhookURL;
+>>>>>>> 5487341993c210e2bd9b78774223febeec3fe14f
       // "https://hooks.slack.com/services/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";
       console.log(webhookURL);
       for (let i = 1; i <= 3; i++) {
@@ -41,24 +46,43 @@ window.addEventListener("load", async () => {
         message = textForm.value;
       }
 
+<<<<<<< HEAD
       // if (document.getElementById)const impersonationUsername = 
+=======
+      // if (document.getElementById)const impersonationUsername =
+>>>>>>> 5487341993c210e2bd9b78774223febeec3fe14f
 
       const data = {
         text: `<${tab.url}>\n${message}`,
       };
+<<<<<<< HEAD
       if (document.getElementById("person2").checked){
         data["username"]= "MasashiMaeda(ジブリ好き)";
         data["icon_url"]="https://kazunorinakajima.github.io/digdig/T02DS9VKWLU-U02RZU1281G-227adde3fd71-512.png";
       }else if(document.getElementById("person3").checked){
         data["username"]= "ShimaBoo(魔神ブゥ好き)";
         data["icon_url"]="https://kazunorinakajima.github.io/digdig/shimaboo.png";
+=======
+      if (document.getElementById("person2").checked) {
+        data["username"] = "MasashiMaeda(ジブリ好き)";
+        data["icon_url"] =
+          "https://kazunorinakajima.github.io/digdig/T02DS9VKWLU-U02RZU1281G-227adde3fd71-512.png";
+      } else if (document.getElementById("person3").checked) {
+        data["username"] = "ShimaBoo(魔神ブゥ好き)";
+        data["icon_url"] =
+          "https://kazunorinakajima.github.io/digdig/shimaboo.png";
+>>>>>>> 5487341993c210e2bd9b78774223febeec3fe14f
       }
       fetch(webhookURL, {
         method: "POST",
         body: JSON.stringify(data),
       }).then((responce) => {
         if (!responce.ok) {
+<<<<<<< HEAD
           alert("エラーレスポンスが帰ってきました: "+ responce.status);
+=======
+          alert("エラーレスポンスが帰ってきました: " + responce.status);
+>>>>>>> 5487341993c210e2bd9b78774223febeec3fe14f
         }
       });
     }
@@ -72,12 +96,22 @@ window.addEventListener("load", async () => {
   });
   const impersonBox = document.getElementById("impersonation-box");
   impersonBox.style.display = "none";
+<<<<<<< HEAD
   const impersonationButtonElement = document.getElementById("btn-impersonation");
   impersonationButtonElement.addEventListener("click", ()=>{
+=======
+  const impersonationButtonElement =
+    document.getElementById("btn-impersonation");
+  impersonationButtonElement.addEventListener("click", () => {
+>>>>>>> 5487341993c210e2bd9b78774223febeec3fe14f
     if (impersonBox.style.display === "block") {
       impersonBox.style.display = "none";
     } else {
       impersonBox.style.display = "block";
     }
   });
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> 5487341993c210e2bd9b78774223febeec3fe14f
