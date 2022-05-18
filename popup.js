@@ -2,7 +2,7 @@
 
 // fix
 window.addEventListener("load", async () => {
-  
+  // localStorage.getItem("yourWebhookURL") = 0;  //for demo
   let yourWebhookURL = localStorage.getItem("yourWebhookURL");
   if (!yourWebhookURL) {
     // Prompt for one if a WebhookUR isn't found
